@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.bs.entity.TheGroup" table="theGroup" catalog="database">
+        <id name="number" type="java.lang.Integer">
+            <column name="Number" />
+            <generator class="native"></generator>
+        </id>
+        <many-to-one name="animal" class="com.bs.entity.Animal" cascade="save-update" insert="true" update="true" lazy="false">
+            <column name="AnimalId" not-null="true" />
+        </many-to-one>
+        <many-to-one name="groupInformation" class="com.bs.entity.GroupInformation" cascade="save-update" insert="true" update="true" lazy="false">
+            <column name="groupId" not-null="false" />
+        </many-to-one>
+        <property name="time" type="java.sql.Timestamp">
+            <column name="Time" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

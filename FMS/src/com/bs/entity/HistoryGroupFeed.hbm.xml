@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.bs.entity.HistoryGroupFeed" table="history_group_feed" schema="database">
+        <id name="number" column="Number"/>
+        <property name="groupId" column="GroupId"/>
+        <property name="feedId" column="FeedId"/>
+        <property name="amount" column="Amount"/>
+        <property name="feedUseTime" column="FeedUseTime"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="FMS:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/FMS_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="FMS" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="mysql-connector-java-5.1.44-bin" />
+          <element id="library" level="project" name="antlr-2.7.7" />
+          <element id="library" level="project" name="spring-core-4.0.1.RELEASE" />
+          <element id="library" level="project" name="commons-beanutils-1.7.0" />
+          <element id="library" level="project" name="struts2-core-2.3.34" />
+          <element id="library" level="project" name="commons-collections-3.2" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="FMS/web/Web" />
+    </root>
+  </artifact>
+</component>

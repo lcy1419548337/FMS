@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<table name="animal_category" catalog="database">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="animal_feed_information" catalog="database">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="animal_information" catalog="database">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="animal" catalog="database">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="feed_category" catalog="database">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="feed_information" catalog="database">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="feed" catalog="database">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="history_basic" catalog="database">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="history_feed" catalog="database">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="producer_information" catalog="database">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="product_information" catalog="database">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="product_nutrients" catalog="database">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="supplier_feed" catalog="database">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="supplier" catalog="database">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="admin" catalog="database">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="user" catalog="database">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="formula" catalog="database">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="group" catalog="database">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="group_feed_information" catalog="database">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+<table name="group_information" catalog="database">
+	<primary-key>
+		<generator class="native"></generator>
+	</primary-key>
+</table>
+</hibernate-reverse-engineering>

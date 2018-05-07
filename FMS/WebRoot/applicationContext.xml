@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx.xsd" 
+	
+	xmlns:tx="http://www.springframework.org/schema/tx">
+
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp2.BasicDataSource">
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/database">
+		</property>
+		<property name="username" value="root"></property>
+		<property name="password" value="19960111847"></property>
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.formate_sql">true</prop>
+				<prop key="hibernate.connection.autocommit">false</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				
+			</props>
+		</property>
+		
+		<property name="mappingResources">
+			<list>
+				<value>com/bs/entity/ProducerInformation.hbm.xml</value>
+				<value>com/bs/entity/AnimalInformation.hbm.xml</value>
+				<value>com/bs/entity/FeedInformation.hbm.xml</value>
+				<value>com/bs/entity/ProductNutrients.hbm.xml</value>
+				<value>com/bs/entity/Animal.hbm.xml</value>
+				<value>com/bs/entity/HistoryFeed.hbm.xml</value>
+				<value>com/bs/entity/SupplierFeed.hbm.xml</value>
+				<value>com/bs/entity/HistoryBasic.hbm.xml</value>
+				<value>com/bs/entity/Supplier.hbm.xml</value>
+				<value>com/bs/entity/ProductInformation.hbm.xml</value>
+				<value>com/bs/entity/FeedCategory.hbm.xml</value>
+				<value>com/bs/entity/AnimalCategory.hbm.xml</value>
+				<value>
+					com/bs/entity/AnimalFeedInformation.hbm.xml
+				</value>
+				<value>com/bs/entity/Feed.hbm.xml</value>
+				<value>com/bs/entity/User.hbm.xml</value>
+				<value>com/bs/entity/Admin.hbm.xml</value>
+				<value>com/bs/entity/Formula.hbm.xml</value>
+				<value>com/bs/entity/TheGroup.hbm.xml</value>
+				<value>
+					com/bs/entity/GroupFeedInformation.hbm.xml
+				</value>
+				<value>com/bs/entity/GroupInformation.hbm.xml</value></list>
+		</property></bean>
+	
+		<!-- 声明事务管理器 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	
+		<!-- 注解事务（在代码中直接用@即可） -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	
+	<!-- 定义事物通知 -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="*" propagation="REQUIRED"/>
+		</tx:attributes>
+	</tx:advice>
+	<!-- 定义切面 (还没做)-->
+		<aop:config>
+		<!-- 对com.news.biz包下的所有类的所有方法都应用事物规则-->
+		<aop:pointcut expression="execution(* com.bs.service.*.*(..))" id="serviceMethod"/>
+		<!-- 将事务与通知切面组合 -->
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethod"/>
+	</aop:config>
+	<!-- 定义action -->
+		<bean id="Test" class="com.bs.action.test" scope="prototype"></bean>
+		<bean id="loginAction" class="com.bs.action.LoginAction" scope="prototype">
+			<property name="loginService" ref="loginService"></property>
+		</bean>
+		<!-- 动物操作的action -->
+		<bean id="animalAction" class="com.bs.action.AnimalAction" scope="prototype">
+			<property name="animalService" ref="animalService"></property>
+		</bean>
+		<!-- 饲料操作的action -->
+		<bean id="feedAction" class="com.bs.action.FeedAction" scope="prototype">
+			<property name="feedService" ref="feedService"></property>
+			<property name="supplierService" ref="supplierService"></property>
+		</bean>
+		<!-- 供应商操作的action -->
+		<bean id="supplierAction" class="com.bs.action.SupplierAction">
+			<property name="supplierService" ref="supplierService"></property>
+		</bean>
+		<!-- 管理员操作的action -->
+		<bean id="adminAction" class="com.bs.action.AdminAction">
+			<property name="adminService" ref="adminService"></property>
+		</bean>
+		<!-- group操作的action -->
+		<bean id="groupAction" class="com.bs.action.GroupAction">
+			<property name="groupService" ref="groupService"></property>
+		</bean>
+	<!-- 定义service -->
+		<!-- 定义 loginService-->
+		<bean id="loginService" class="com.bs.serviceImpl.LoginServiceImpl">
+			<property name="loginDao" ref="loginDao"></property>
+		</bean>
+		<!-- 定义animalService -->
+		<bean name="animalService" class="com.bs.serviceImpl.AnimalServiceImpl">
+			<property name="animaldao" ref="animalDao"></property>
+		</bean>
+		<!-- feedService -->
+		<bean name="feedService" class="com.bs.serviceImpl.FeedServiceImpl">
+			<property name="feedDao" ref="feedDao"></property>
+		</bean>
+		<!-- supplierService -->
+		<bean name="supplierService" class="com.bs.serviceImpl.SupplierServiceImpl">
+			<property name="supplierDao" ref="supplierDao"></property>
+		</bean>
+		<!-- adminService -->
+		<bean name="adminService" class="com.bs.serviceImpl.AdminServiceImpl">
+			<property name="adminDao" ref="adminDao"></property>
+		</bean>
+		<!-- groupService -->
+		<bean name="groupService" class="com.bs.serviceImpl.GroupServiceImpl">
+			<property name="groupDao" ref="groupDao"></property>
+		</bean>
+	<!-- 定义dao -->
+		<!-- loginDao -->
+		<bean id="loginDao" class="com.bs.daoImpl.LoginDaoImpl">
+			<property name="sessionFactory" ref="sessionFactory"></property>
+		</bean>
+		<!-- animalDao -->
+		<bean id="animalDao" class="com.bs.daoImpl.AnimalDaoImpl">
+			<property name="sessionFactory" ref="sessionFactory"></property>
+		</bean>
+		<!-- feedDao -->
+		<bean name="feedDao" class="com.bs.daoImpl.FeedDaoImpl">
+			<property name="sessionFactory" ref="sessionFactory"></property>
+		</bean>
+		<!-- supplierDao -->
+		<bean name="supplierDao" class="com.bs.daoImpl.SupplierDaoImpl">
+			<property name="sessionFactory" ref="sessionFactory"></property>
+		</bean>
+		<bean name="testTest" class="com.bs.test.test" scope="prototype">
+			<property name="sessionFactory" ref="sessionFactory"></property>
+		</bean>
+		<bean name="adminDao" class="com.bs.daoImpl.AdminDaoImpl">
+			<property name="sessionFactory" ref="sessionFactory"></property>
+		</bean>
+		<bean name="groupDao" class="com.bs.daoImpl.GroupDaoImpl">
+			<property name="sessionFactory" ref="sessionFactory"></property>
+		</bean>
+	</beans>

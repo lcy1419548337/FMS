@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url">jdbc:mysql://localhost:3306/database</property>
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <mapping resource="com/bs/entity/HistoryGroupFeed.hbm.xml"/>
+      <mapping class="com.bs.entity.HistoryGroupFeed"/>
+      <mapping class="com.bs.entity.FeedFormula"/>
+      <mapping resource="com/bs/entity/FeedFormula.hbm.xml"/>
+      <mapping resource="com/bs/entity/Material.hbm.xml"/>
+      <mapping class="com.bs.entity.Material"/>
+      <!-- <property name="connection.username"/> -->
+    <!-- <property name="connection.password"/> -->
+
+    <!-- DB schema will be updated if needed -->
+    <!-- <property name="hbm2ddl.auto">update</property> -->
+  </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="ECharts-3.0.0-javadoc">
+    <CLASSES>
+      <root url="jar://F:/jar包/ssh/struts-2.3.34/ECharts-3.0.0.jar!/" />
+      <root url="jar://F:/jar包/ssh/struts-2.3.34/ezmorph-1.0.3.jar!/" />
+      <root url="jar://F:/jar包/ssh/struts-2.3.34/servlet-api.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://F:/jar包/ssh/struts-2.3.34/ECharts-3.0.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://F:/jar包/ssh/struts-2.3.34/ECharts-3.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

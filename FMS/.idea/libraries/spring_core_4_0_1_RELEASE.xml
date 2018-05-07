@@ -1,0 +1,22 @@
+<component name="libraryTable">
+  <library name="spring-core-4.0.1.RELEASE">
+    <CLASSES>
+      <root url="jar://F:/jar包/ssh/spring-framework-4.0.1.RELEASE/libs/spring-core-4.0.1.RELEASE.jar!/" />
+      <root url="jar://F:/jar包/ssh/spring-framework-4.0.1.RELEASE/libs/spring-aspects-4.0.1.RELEASE.jar!/" />
+      <root url="jar://F:/jar包/ssh/spring-framework-4.0.1.RELEASE/libs/spring-beans-4.0.1.RELEASE.jar!/" />
+      <root url="jar://F:/jar包/ssh/spring-framework-4.0.1.RELEASE/libs/spring-context-4.0.1.RELEASE.jar!/" />
+      <root url="jar://F:/jar包/ssh/spring-framework-4.0.1.RELEASE/libs/spring-aop-4.0.1.RELEASE.jar!/" />
+      <root url="jar://F:/jar包/ssh/spring-framework-4.0.1.RELEASE/libs/spring-web-4.0.1.RELEASE.jar!/" />
+      <root url="jar://F:/jar包/ssh/spring-framework-4.0.1.RELEASE/libs/spring-webmvc-4.0.1.RELEASE.jar!/" />
+      <root url="jar://F:/jar包/ssh/spring-framework-4.0.1.RELEASE/libs/spring-framework-bom-4.0.1.RELEASE.jar!/" />
+      <root url="jar://F:/jar包/ssh/spring-framework-4.0.1.RELEASE/libs/spring-orm-4.0.1.RELEASE.jar!/" />
+      <root url="jar://F:/jar包/ssh/spring-framework-4.0.1.RELEASE/libs/spring-tx-4.0.1.RELEASE.jar!/" />
+      <root url="jar://F:/jar包/ssh/spring-framework-4.0.1.RELEASE/aopalliance.jar!/" />
+      <root url="jar://F:/jar包/ssh/spring-framework-4.0.1.RELEASE/libs/spring-expression-4.0.1.RELEASE.jar!/" />
+      <root url="jar://F:/jar包/ssh/spring-framework-4.0.1.RELEASE/aspectjweaver.jar!/" />
+      <root url="jar://F:/jar包/ssh/spring-framework-4.0.1.RELEASE/libs/spring-jdbc-4.0.1.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

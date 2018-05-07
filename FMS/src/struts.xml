@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="FMS" extends="struts-default" namespace="/">
+		<action name="test_*" class="Test" method="{1}">
+			<result name="hello">/WEB-INF/jsp/login.jsp</result>
+		</action>
+		<!-- LoginAction -->
+		<action name="toLogin_*" class="loginAction" method="{1}">
+			<result name="adminLogin">/WEB-INF/jsp/adminLogin.jsp</result>
+			<result name="toAdminLogin">/WEB-INF/jsp/adminLogin.jsp</result>
+		</action>
+		<action name="login_*" class="loginAction" method="{1}">
+			<result name="toAdminLogin">/WEB-INF/jsp/adminLogin.jsp</result>
+			<result name="tomanage">/index2.jsp</result>
+			<result name="toUserRegist">/WEB-INF/jsp/admin/addUserInformation.jsp</result>
+			<result name="input">/WEB-INF/jsp/admin/addUserInformation.jsp</result>
+		</action>
+		<action name="regist_*" class="loginAction" method="{1}">
+			<result name="toUserRegist">/WEB-INF/jsp/userRegist.jsp</result>
+			<result name="registFinished">/WEB-INF/jsp/hello.jsp</result>
+			<result name="input">/WEB-INF/jsp/userRegist.jsp</result>
+			<result name="tologin">/WEB-INF/jsp/adminLogin.jsp</result>
+		</action>
+		<!-- 动物操作的action -->
+		<action name="animal_*" class="animalAction" method="{1}">
+			<result name="toAddAnimal">/WEB-INF/jsp/admin/addAnimal.jsp</result>
+			<result name="addAnimalSuccessed">/WEB-INF/jsp/admin/addAnimal.jsp</result>
+			<result name="findByPage">/WEB-INF/jsp/testTable.jsp</result>
+			<result name="findCategoryByPage">/WEB-INF/jsp/admin/animalCategory.jsp</result>
+			<result name="toAddAnimalInformation">/WEB-INF/jsp/admin/addAnimalInformation.jsp</result>
+			<result name="toFindAnimal">/WEB-INF/jsp/admin/findAnimal.jsp</result>
+			<result name="toChangePage">/WEB-INF/jsp/admin/changeAnimal.jsp</result>
+			<result name="useFeed">/WEB-INF/jsp/admin/useFeed.jsp</result>
+			<result name="toMakeChart">/WEB-INF/jsp/admin/findOneAnimalFeedInformation.jsp</result>
+			<result name="findAnimalForm">/WEB-INF/jsp/admin/findAnimalForm.jsp</result>
+		</action>
+		<!-- 饲料操作的action -->
+		<action name="feed_*" class="feedAction" method="{1}">
+			<result name="toAddFeed">/WEB-INF/jsp/admin/addFeed.jsp</result>
+			<result name="toUseFeed">/WEB-INF/jsp/admin/useFeed.jsp</result>
+			<result name="useFeedSuccess">/WEB-INF/jsp/admin/useFeed.jsp</result>
+			<result name="toFindFeed">/WEB-INF/jsp/admin/findFeed.jsp</result>
+			<result name="findFeedInformation">/WEB-INF/jsp/admin/feedInformation.jsp</result>
+			<!--<result name="findAllFeed">/WEB-INF/jsp/admin/findFeed.jsp</result>-->
+			<result name="findAllFeed">/WEB-INF/jsp/admin/findFeedForm.jsp</result>
+			<result name="toAddFeedInformation">/WEB-INF/jsp/admin/addFeedInformation.jsp</result>
+			<result name="toModifyFeed">/WEB-INF/jsp/admin/modifyFeed.jsp</result>
+			<result name="back">/WEB-INF/jsp/back.jsp</result>
+			<result name="showForm">/WEB-INF/jsp/admin/showForm.jsp</result>
+			<result name="tofindOneAnimalFeed">/WEB-INF/jsp/admin/findOneAnimalFeed.jsp</result>
+			<result name="toAddFeedFormula">/WEB-INF/jsp/admin/addFeedFormula.jsp</result>
+			<result name="toFindFeedFormula">/WEB-INF/jsp/admin/findFeedFormula.jsp</result>
+			<result name="FindFeedFormula">/WEB-INF/jsp/admin/findFeedFormulaForm.jsp</result>
+			<result name="toModifyFormula">/WEB-INF/jsp/admin/modifyFeedFormula.jsp</result>
+		</action>
+		<!-- 供应商操作的action -->
+		<action name="supplier_*" class="supplierAction" method="{1}">
+			<result name="toAddSupplier">/WEB-INF/jsp/admin/addSupplier.jsp</result>
+			<result name="toFindSupplier">/WEB-INF/jsp/admin/findSupplier.jsp</result>
+			<result name="toModifySupplier">/WEB-INF/jsp/admin/modifySupplier.jsp</result>
+			<result name="ViewSupplier">/WEB-INF/jsp/admin/ViewSupplier.jsp</result>
+		</action>
+		<action name="testhibernates_*" class="feedAction" method="{1}">
+			
+		</action>
+		<!--管理员操作的action -->
+		<action name="admin_*" class="adminAction" method="{1}">
+			<result name="toFindAdmin">/WEB-INF/jsp/admin/findAdmin.jsp</result>
+			<result name="toAddUser">/WEB-INF/jsp/admin/addUser.jsp</result>
+		</action>
+		<!--集群操作-->
+		<action name="group_*" class="groupAction" method="{1}">
+			<result name="toAddGroup">/WEB-INF/jsp/admin/addGroup.jsp</result>
+			<result name="toFindGroup">/WEB-INF/jsp/admin/findGroup.jsp</result>
+			<result name="findByGroupId">/WEB-INF/jsp/admin/findGroupByGroupId.jsp</result>
+			<result name="toGroupUseFeed">/WEB-INF/jsp/admin/addGroupFeed.jsp</result>
+			<result name="tofindOneGroupFeed">/WEB-INF/jsp/admin/findOneGroupFeed.jsp</result>
+			<!--<result name="showGroupFeed">/WEB-INF/jsp/admin/findOneGroupFeed.jsp</result>-->
+			<result name="showGroupFeed">/WEB-INF/jsp/admin/showGroup.jsp</result>
+			<result name="toMakeChart">/WEB-INF/jsp/admin/findOneGroupInformation.jsp</result>
+			<result name="GroupForm">/WEB-INF/jsp/admin/GroupForm.jsp</result>
+			<result name="viewGroup">/WEB-INF/jsp/admin/ViewGroup.jsp</result>
+			<result name="toModifyGroup">/WEB-INF/jsp/admin/modifyGroup.jsp</result>
+		</action>
+	</package>
+</struts>    

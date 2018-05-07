@@ -1,0 +1,9 @@
+2018-04-27 16:09:09,191 WARN  [DefaultSoapUICore] Missing folder [C:\Users\liuxi\ext] for external libraries
+2018-04-27 16:09:09,423 INFO  [DefaultSoapUICore] initialized soapui-settings from [C:\Users\liuxi\soapui-settings.xml]
+2018-04-27 16:09:09,921 INFO  [WorkspaceImpl] Loading workspace from [C:\Users\liuxi\intellij-soapui-workspace.xml]
+2018-04-27 16:14:07,633 INFO  [WorkspaceImpl] Saved workspace to [C:\Users\liuxi\intellij-soapui-workspace.xml]
+2018-04-27 16:14:07,637 INFO  [DefaultSoapUICore] Settings saved to [C:\Users\liuxi\soapui-settings.xml]
+2018-04-27 16:16:35,714 INFO  [WorkspaceImpl] Saved workspace to [C:\Users\liuxi\intellij-soapui-workspace.xml]
+2018-04-27 16:16:35,717 INFO  [DefaultSoapUICore] Settings saved to [C:\Users\liuxi\soapui-settings.xml]
+2018-04-27 17:54:37,208 INFO  [WorkspaceImpl] Saved workspace to [C:\Users\liuxi\intellij-soapui-workspace.xml]
+2018-04-27 17:54:37,212 INFO  [DefaultSoapUICore] Settings saved to [C:\Users\liuxi\soapui-settings.xml]
